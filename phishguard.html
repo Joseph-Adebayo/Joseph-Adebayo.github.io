@@ -26,19 +26,19 @@
 
 <div class="container post">
     <p><a href="Blog.html" class="back-link">← All posts</a></p>
-    <h1>PhishGuard: Checking Links for Phishing</h1>
-    <p class="post-meta">October 2026 · Python, Flask · <a href="https://github.com/Joseph-Adebayo/phishguard" class="back-link" target="_blank" rel="noopener">View the code on GitHub</a></p>
+    <h1>PhishGuard</h1>
+    <p class="post-meta">October 2026 | <a href="https://github.com/Joseph-Adebayo/phishguard" class="back-link" target="_blank" rel="noopener">Code on GitHub</a></p>
 
-    <p>PhishGuard is a small web app I built in Python and Flask. You paste in a link, and it checks the URL for patterns that are common in phishing links, then lists any red flags it finds.</p>
+    <p>PhishGuard is a web app I made with Python and Flask. You paste in a link and it checks the URL for signs that it could be a phishing link.</p>
 
     <figure>
         <img src="images/phishguard-suspicious.jpg" alt="PhishGuard flagging a suspicious PayPal lookalike URL">
-        <figcaption>A fake PayPal link triggers four checks at once.</figcaption>
+        <figcaption>A fake PayPal link getting flagged.</figcaption>
     </figure>
 
     <h2>How It Works</h2>
-    <p>The app uses the <code>tldextract</code> library to split a URL into three parts: the subdomain, the domain and the suffix (like <code>.com</code> or <code>.co.uk</code>). Most of the checks rely on that split, because phishing links often hide a trusted name in the wrong part of the address.</p>
-    <p>For example, in <code>paypal.secure-login.account.tk</code> the real domain is <code>account.tk</code>, not PayPal. "paypal" is only in the subdomain. This is the check that catches it:</p>
+    <p>It uses a library called <code>tldextract</code> to split the URL into the subdomain, the domain and the ending (like <code>.com</code>). Then it runs checks on each part.</p>
+    <p>For example, in <code>paypal.secure-login.account.tk</code> the real domain is <code>account.tk</code>. "paypal" is only in the subdomain, which is a common phishing trick. This function checks for that:</p>
 <pre><code>def check_brand(result):
     subdomain = result.subdomain.lower()
     domain = result.domain.lower()
@@ -47,23 +47,23 @@
             return True
     return False</code></pre>
 
-    <p>The full list of checks:</p>
+    <p>What it checks for:</p>
     <ul class="post-list">
-        <li>A well-known brand name in the subdomain but not the real domain</li>
-        <li>Top-level domains often used in scams, such as <code>.tk</code>, <code>.xyz</code> and <code>.top</code></li>
-        <li>Unusually deep subdomains</li>
-        <li>A raw IP address instead of a domain name</li>
-        <li>Lots of hyphens in the URL</li>
-        <li>Digits mixed with a brand name, like <code>paypal123</code></li>
+        <li>Brand names in the subdomain</li>
+        <li>Endings often used in scams, like <code>.tk</code>, <code>.xyz</code> and <code>.top</code></li>
+        <li>Too many subdomains</li>
+        <li>An IP address instead of a domain name</li>
+        <li>Lots of hyphens</li>
+        <li>Numbers next to a brand name, like <code>paypal123</code></li>
     </ul>
 
     <figure>
         <img src="images/phishguard-safe.jpg" alt="PhishGuard showing no red flags for a BBC News link">
-        <figcaption>A normal link comes back clean.</figcaption>
+        <figcaption>A normal link with no red flags.</figcaption>
     </figure>
 
     <h2>Limitations</h2>
-    <p>PhishGuard is rule-based, so it only catches the patterns I've written checks for. A clean result doesn't prove a link is safe. Ideas for improving it include detecting lookalike characters (e.g. <code>rn</code> pretending to be <code>m</code>) and checking how recently a domain was registered.</p>
+    <p>It only catches the patterns I've written checks for, so a link with no red flags isn't guaranteed to be safe.</p>
 </div>
 
 <footer>
