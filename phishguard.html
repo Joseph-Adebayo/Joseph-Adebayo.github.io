@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PhishGuard: a Python and Flask app that checks URLs for common signs of phishing.">
+    <title>PhishGuard | Oreoluwa Adebayo</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">About me</a></li>
+            <li><a href="Blog.html" class="active">Blog</a></li>
+            <li><a href="experience.html">Experiences</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="Joseph_Adebayo_CV.pdf" target="_blank" rel="noopener">CV</a></li>
+        </ul>
+    </nav>
+
+<div class="container post">
+    <p><a href="Blog.html" class="back-link">← All posts</a></p>
+    <h1>PhishGuard: Checking Links for Phishing</h1>
+    <p class="post-meta">October 2026 · Python, Flask · <a href="https://github.com/Joseph-Adebayo/phishguard" class="back-link" target="_blank" rel="noopener">View the code on GitHub</a></p>
+
+    <p>PhishGuard is a small web app I built in Python and Flask. You paste in a link, and it checks the URL for patterns that are common in phishing links, then lists any red flags it finds.</p>
+
+    <figure>
+        <img src="images/phishguard-suspicious.jpg" alt="PhishGuard flagging a suspicious PayPal lookalike URL">
+        <figcaption>A fake PayPal link triggers four checks at once.</figcaption>
+    </figure>
+
+    <h2>How It Works</h2>
+    <p>The app uses the <code>tldextract</code> library to split a URL into three parts: the subdomain, the domain and the suffix (like <code>.com</code> or <code>.co.uk</code>). Most of the checks rely on that split, because phishing links often hide a trusted name in the wrong part of the address.</p>
+    <p>For example, in <code>paypal.secure-login.account.tk</code> the real domain is <code>account.tk</code>, not PayPal. "paypal" is only in the subdomain. This is the check that catches it:</p>
+<pre><code>def check_brand(result):
+    subdomain = result.subdomain.lower()
+    domain = result.domain.lower()
+    for brand in SUSPICIOUS_BRANDS:
+        if brand in subdomain and brand != domain:
+            return True
+    return False</code></pre>
+
+    <p>The full list of checks:</p>
+    <ul class="post-list">
+        <li>A well-known brand name in the subdomain but not the real domain</li>
+        <li>Top-level domains often used in scams, such as <code>.tk</code>, <code>.xyz</code> and <code>.top</code></li>
+        <li>Unusually deep subdomains</li>
+        <li>A raw IP address instead of a domain name</li>
+        <li>Lots of hyphens in the URL</li>
+        <li>Digits mixed with a brand name, like <code>paypal123</code></li>
+    </ul>
+
+    <figure>
+        <img src="images/phishguard-safe.jpg" alt="PhishGuard showing no red flags for a BBC News link">
+        <figcaption>A normal link comes back clean.</figcaption>
+    </figure>
+
+    <h2>Limitations</h2>
+    <p>PhishGuard is rule-based, so it only catches the patterns I've written checks for. A clean result doesn't prove a link is safe. Ideas for improving it include detecting lookalike characters (e.g. <code>rn</code> pretending to be <code>m</code>) and checking how recently a domain was registered.</p>
+</div>
+
+<footer>
+    <p>© 2026 Oreoluwa Joseph Adebayo</p>
+    <a href="https://www.linkedin.com/in/joseph-adebayo-4623263ab" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://github.com/Joseph-Adebayo" target="_blank" rel="noopener noreferrer">GitHub</a>
+</footer>
+<script src="nav.js"></script>
+</body>
+</html>

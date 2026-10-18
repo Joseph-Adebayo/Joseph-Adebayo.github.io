@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projects by Oreoluwa (Joseph) Adebayo: RevisionPilot (A-level NEA) and Coolora.">
+    <title>Projects | Oreoluwa Adebayo</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">About me</a></li>
+            <li><a href="Blog.html">Blog</a></li>
+            <li><a href="experience.html">Experiences</a></li>
+            <li><a href="project.html" class="active">Projects</a></li>
+            <li><a href="Joseph_Adebayo_CV.pdf" target="_blank" rel="noopener">CV</a></li>
+        </ul>
+    </nav>
+<h1 class="page-title">Projects</h1>
+<div class="container">
+
+    <div class="experience-entry">
+        <b>RevisionPilot</b> <i>A-level Computer Science NEA · In development</i>
+        <p>A web app that generates personalised revision schedules from a student's timetable, subjects and existing commitments, so revision fits around real life rather than an idealised plan.</p>
+        <p><i>How it works</i>
+            <br>The back end is written in Python with Flask, using Jinja templates and an SQLite database, with an HTML/CSS front end. At its core is a prioritisation algorithm I designed that allocates revision sessions according to the study time each student actually has available.
+        </p>
+        <div class="skills-tag">
+            <span class="tag">Python</span>
+            <span class="tag">Flask</span>
+            <span class="tag">Jinja</span>
+            <span class="tag">SQLite</span>
+            <span class="tag">HTML/CSS</span>
+            <span class="tag">Algorithms</span>
+        </div>
+    </div>
+
+<div class="experience-entry">
+    <b>PhishGuard</b> <i>Python · Flask · Cyber security</i>
+    <img src="images/phishguard-suspicious.jpg" alt="PhishGuard flagging a suspicious URL" class="entry-img">
+    <p>A web app that checks a URL for common signs of phishing, such as brand names hidden in subdomains, suspicious top-level domains and raw IP addresses. It uses tldextract to split the URL into its parts and tests each one against a set of rules.</p>
+    <p><a href="phishguard.html" class="back-link">Read the write-up</a> · <a href="https://github.com/Joseph-Adebayo/phishguard" class="back-link" target="_blank" rel="noopener">View on GitHub</a></p>
+    <div class="skills-tag">
+        <span class="tag">Python</span>
+        <span class="tag">Flask</span>
+        <span class="tag">tldextract</span>
+        <span class="tag">Cyber Security</span>
+    </div>
+</div>
+
+<div class="experience-entry">
+    <b>Coolora</b> <i>E-commerce &amp; Digital Marketing Project · June 2026 – September 2026</i>
+    <img src="images/coolora-storefront.jpg" alt="Coolora Shopify storefront" class="entry-img">
+
+    <p><i>What I Built</i>
+        <br>I built Coolora from the ground up using Shopify, taking responsibility for the product pages, storefront design, shipping and packaging setup, and the development of a complete brand identity.
+        <br>I sourced products through Eprolo and ran paid advertising campaigns to drive traffic to the store. The store was fully launched and generated visitor traffic, although it did not ultimately convert into sales.
+    </p>
+    <p><i>What I Learned</i>
+        <br>Running Coolora taught me far more about marketing and business than I initially expected. I learned about positioning a product for the right audience, the importance of trends and seasonality, and how these factors can directly influence consumer buying behaviour.
+        <br>The project also gave me a more realistic understanding of the financial side of e-commerce. I experienced first-hand what it means to invest both time and money into an idea without knowing whether it will generate a return.
+    </p>
+    <p>
+        Looking back, I believe the lack of sales was partly due to limited resources being available for advertising and testing. Generating traffic alone is not enough — understanding the audience, testing different approaches and giving campaigns enough opportunity to learn are all important parts of improving conversion.
+        <br>The biggest lesson I took away from the project was the importance of validating demand before investing heavily in an idea. Testing interest early can provide valuable evidence about whether there is genuine demand before committing significant time and money.
+    </p>
+    <div class="entry-gallery">
+    <img src="images/coolora-home-1.jpg" alt="Coolora homepage">
+    <img src="images/coolora-home-2.jpg" alt="Coolora storefront">
+    <img src="images/coolora-lifestyle-1.jpg" alt="Coolora fan lifestyle shot">
+    <img src="images/coolora-lifestyle-2.jpg" alt="Coolora fan lifestyle shot">
+    <img src="images/coolora-studio.jpg" alt="Coolora fan studio shot">
+    <img src="images/coolora-lifestyle-3.jpg" alt="Coolora fan lifestyle shot">
+</div>
+    
+    <div class="skills-tag">
+        <span class="tag">Shopify</span>
+        <span class="tag">E-Commerce</span>
+        <span class="tag">Digital Marketing</span>
+        <span class="tag">Brand Development</span>
+        <span class="tag">Paid Advertising</span>
+        <span class="tag">Market Research</span>
+        <span class="tag">Data Analysis</span>
+    </div>
+</div>
+
+
+</div>
+
+<footer>
+    <p>© 2026 Oreoluwa Joseph Adebayo</p>
+    <a href="https://www.linkedin.com/in/joseph-adebayo-4623263ab" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://github.com/Joseph-Adebayo" target="_blank" rel="noopener noreferrer">GitHub</a>
+</footer>
+<script src="nav.js"></script>
+</body>
+</html>
