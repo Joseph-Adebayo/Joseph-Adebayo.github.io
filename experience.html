@@ -8,24 +8,29 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
+<header class="site-header">
+    <div class="site-header-inner">
+        <a href="index.html" class="brand"><span class="brand-mark">OA</span>joseph-adebayo.github.io</a>
         <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-        <ul class="navbar">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="About.html">About me</a></li>
-            <li><a href="Blog.html">Blog</a></li>
-            <li><a href="experience.html" class="active">Experiences</a></li>
-            <li><a href="project.html">Projects</a></li>
-            <li><a href="Joseph_Adebayo_CV.pdf" target="_blank" rel="noopener">CV</a></li>
-        </ul>
-    </nav>
+        <nav aria-label="Main">
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="experience.html" class="active" aria-current="page">Experience</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="Joseph_Adebayo_CV.pdf" class="nav-cta" target="_blank" rel="noopener">CV</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 <h1 class="page-title">Experience</h1>
 <div class="container">
-    <div class="experience-entry">
+    <div class="experience-entry" id="national-grid">
         <b>National Grid</b> <i>August 2026</i>
         <p>
             I recently completed my Cyber Security Work Experience with National Grid, delivered through Generating Genius, and it completely changed how I think about protecting critical infrastructure.
@@ -48,13 +53,13 @@
         </p>
     </div>
 
-    <div class="experience-entry">
+    <div class="experience-entry" id="leaf-pathway">
         <b>Leaf Pathway</b> <i>Internship, July 2026</i>
         <p>In July I did an internship with Leaf Pathway. I helped organise a mock assessment centre and interview day to help more than 50 young people prepare for apprenticeship applications.</p>
         <p>I made presentation slides and templates showing assessment centre activities and interview practice, and worked remotely with the team on resources about the recruitment process, teamwork and communication.</p>
     </div>
 
-    <div class="experience-entry">
+    <div class="experience-entry" id="bt">
         <b>BT</b> <i>July 2026</i>
         <p>I recently had the opportunity to take part in the BT Work Insight Programme, where I gained valuable insight into the telecommunications industry and the wide range of career opportunities within BT and EE.</p>
         <p>
@@ -65,7 +70,7 @@
         </p>
     </div>
 
-    <div class="experience-entry">
+    <div class="experience-entry" id="rolls-royce">
         <b>Rolls-Royce</b> <i>May 2026</i>
         <p>I had an amazing opportunity to attend a 4-day behind-the-scenes work experience programme with Rolls-Royce in Solihull. It was an incredibly insightful experience that gave me a deeper understanding of the many departments that contribute to making the company what it is today.</p>
         <p>
@@ -81,10 +86,15 @@
 
 </div>
 
-<footer>
-    <p>© 2026 Oreoluwa Joseph Adebayo</p>
-    <a href="https://www.linkedin.com/in/joseph-adebayo-4623263ab" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    <a href="https://github.com/Joseph-Adebayo" target="_blank" rel="noopener noreferrer">GitHub</a>
+<footer class="site-footer">
+    <div class="site-footer-inner">
+        <span>© 2026 Oreoluwa (Joseph) Adebayo · Coventry, UK</span>
+        <nav aria-label="Elsewhere">
+            <a href="mailto:adebayooreoluwa49@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/joseph-adebayo-4623263ab" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/Joseph-Adebayo" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </nav>
+    </div>
 </footer>
 <script src="nav.js"></script>
 </body>

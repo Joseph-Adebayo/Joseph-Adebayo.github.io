@@ -8,25 +8,77 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
+<header class="site-header">
+    <div class="site-header-inner">
+        <a href="index.html" class="brand"><span class="brand-mark">OA</span>joseph-adebayo.github.io</a>
         <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-        <ul class="navbar">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="About.html">About me</a></li>
-            <li><a href="Blog.html">Blog</a></li>
-            <li><a href="experience.html">Experiences</a></li>
-            <li><a href="project.html" class="active">Projects</a></li>
-            <li><a href="Joseph_Adebayo_CV.pdf" target="_blank" rel="noopener">CV</a></li>
-        </ul>
-    </nav>
+        <nav aria-label="Main">
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="project.html" class="active" aria-current="page">Projects</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="Joseph_Adebayo_CV.pdf" class="nav-cta" target="_blank" rel="noopener">CV</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 <h1 class="page-title">Projects</h1>
 <div class="container">
 
-    <div class="experience-entry">
+    <div class="experience-entry" id="revision-workspace">
+        <b>Revision Workspace</b> <i>Web app, live, 5 users</i>
+        <img src="images/revision-workspace-progress.jpg" alt="Revision Workspace progress page showing subject scores, why marks were lost and weakest topics" class="entry-img">
+        <p>A revision web app for A-level students. You can annotate past papers with a stylus, record your marks, tag the mistakes you make and link them to your notes, so you can see which topics you keep getting wrong.</p>
+        <p>I built it because the tools I was using for my own revision didn't do this. It runs on Vercel with a Supabase database, and it can find the questions in a past paper PDF automatically and link them to the mark scheme.</p>
+        <p>I came up with the idea, designed the features and tested everything. I can't write React or TypeScript yet, so the code, including the past-paper parser, was written by an AI coding agent that I directed.</p>
+        <p><a href="https://revision-workspace.vercel.app" class="back-link" target="_blank" rel="noopener">Try it live</a></p>
+        <div class="skills-tag">
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">Vercel</span>
+            <span class="tag">PDF annotation</span>
+            <span class="tag">Built with AI</span>
+        </div>
+    </div>
+
+    <div class="experience-entry" id="beatforge">
+        <b>BeatForge</b> <i>Desktop app</i>
+        <img src="images/beatforge.jpg" alt="BeatForge drum sequencer, mixer and piano roll" class="entry-img">
+        <p>A music-making app (a DAW) that runs on the desktop. It has a drum sequencer, a piano roll, a mixer with effects, a song arrangement view and WAV export. It also works with a MIDI keyboard.</p>
+        <p>It runs on Electron and Tone.js. I planned it in phases, adding one feature at a time, and tested each one. The code was written by an AI coding agent that I directed.</p>
+        <div class="skills-tag">
+            <span class="tag">JavaScript</span>
+            <span class="tag">Electron</span>
+            <span class="tag">Tone.js</span>
+            <span class="tag">Web Audio</span>
+            <span class="tag">MIDI</span>
+            <span class="tag">Built with AI</span>
+        </div>
+    </div>
+
+    <div class="experience-entry" id="asa-ai">
+        <b>Àṣà AI</b> <i>AI assistant, prototype</i>
+        <img src="images/asa-ai-login.jpg" alt="Àṣà AI sign-in screen" class="entry-img">
+        <p>An AI assistant made for African users. It can reply in Pidgin, Yorùbá, Igbo, Hausa, French and Kiswahili, and it knows about things like JAMB and WAEC exams.</p>
+        <p>It runs a language model on your own computer with Ollama, so your chats stay on your device. The front end is Next.js and the back end is a Python FastAPI server. The code was written with an AI coding agent that I directed.</p>
+        <img src="images/asa-ai-chat.jpg" alt="Àṣà AI chat screen with suggested questions" class="entry-img">
+        <div class="skills-tag">
+            <span class="tag">Next.js</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Ollama</span>
+            <span class="tag">Llama 3.2</span>
+            <span class="tag">Built with AI</span>
+        </div>
+    </div>
+
+    <div class="experience-entry" id="revisionpilot">
         <b>RevisionPilot</b> <i>A-level Computer Science NEA, in development</i>
         <p>RevisionPilot is the web app I'm building for my A-level Computer Science NEA. It makes a personalised revision timetable based on a student's school timetable, subjects and other commitments.</p>
         <p>I'm building it with Python, Flask, Jinja and SQLite, with an HTML/CSS front end. The main part is an algorithm that decides when to schedule revision sessions based on priority, deadlines and how much free time the student has.</p>
@@ -40,7 +92,7 @@
         </div>
     </div>
 
-<div class="experience-entry">
+<div class="experience-entry" id="phishguard">
     <b>PhishGuard</b> <i>Python and Flask</i>
     <img src="images/phishguard-suspicious.jpg" alt="PhishGuard flagging a suspicious URL" class="entry-img">
     <p>A web app that checks a link for signs of phishing, like brand names in the subdomain, suspicious endings such as .tk, and IP addresses instead of domain names.</p>
@@ -53,13 +105,37 @@
     </div>
 </div>
 
-<div class="experience-entry">
+<div class="experience-entry" id="reselling">
+    <b>Reselling</b> <i>Independent business, started with £15</i>
+    <img src="images/reselling-sheet.jpg" alt="My reselling spreadsheet: cost price, quantity, selling price and price sold for each item, with totals and profit" class="entry-img" style="object-fit: contain; background: #FFFFFF">
+    <p>I started reselling with £15 to learn how buying and selling actually works. My first deal was a pair of Adidas Sambas: I bought them for £12 and sold them for £40, a £28 profit.</p>
+    <p>Instead of taking the money out, I reinvested it into more stock: Nike Jordans, Air Force 1s, Yeezy Slides and AirPods. I sell on eBay, Vinted, Depop and in person, and I handle the sourcing, pricing, listings, customer messages and shipping myself.</p>
+    <p><i>How it works</i>
+        <br>I look for products that sell for more than I can buy them for, check what they actually go for, price them to sell while keeping a margin, then put the money from each sale into the next buy.
+    </p>
+    <p><i>Numbers</i>
+        <br>I track every deal in a spreadsheet. The 7 items on it cost £180 and sold for £515, which is £335 gross profit before fees. The Sambas sale isn't on the sheet, so I count it separately.
+    </p>
+    <p><i>What I Learned</i>
+        <br>You don't need much money to start, but you do need to pick the right products and get your money back quickly. How fast I could sell something and reuse the cash mattered as much as the profit on each item. It was also the opposite of Coolora: no brand and no website, but people already wanted what I was selling.
+    </p>
+    <div class="skills-tag">
+        <span class="tag">eBay</span>
+        <span class="tag">Vinted</span>
+        <span class="tag">Depop</span>
+        <span class="tag">Pricing</span>
+        <span class="tag">Reinvestment</span>
+        <span class="tag">Spreadsheets</span>
+    </div>
+</div>
+
+<div class="experience-entry" id="coolora">
     <b>Coolora</b> <i>E-commerce &amp; Digital Marketing Project, June 2026 to September 2026</i>
     <img src="images/coolora-storefront.jpg" alt="Coolora Shopify storefront" class="entry-img">
 
     <p><i>What I Built</i>
         <br>I built Coolora from the ground up using Shopify, taking responsibility for the product pages, storefront design, shipping and packaging setup, and the development of a complete brand identity.
-        <br>I sourced products through Eprolo and ran paid advertising campaigns to drive traffic to the store. The store was fully launched and generated visitor traffic, although it did not ultimately convert into sales.
+        <br>I sourced products through Eprolo and drove traffic to the store with organic social media content, without any paid ads. The store was fully launched and generated visitor traffic, although it did not ultimately convert into sales.
     </p>
     <p><i>What I Learned</i>
         <br>Running Coolora taught me far more about marketing and business than I initially expected. I learned about positioning a product for the right audience, the importance of trends and seasonality, and how these factors can directly influence consumer buying behaviour.
@@ -83,7 +159,7 @@
         <span class="tag">E-Commerce</span>
         <span class="tag">Digital Marketing</span>
         <span class="tag">Brand Development</span>
-        <span class="tag">Paid Advertising</span>
+        <span class="tag">Organic Social Media</span>
         <span class="tag">Market Research</span>
         <span class="tag">Data Analysis</span>
     </div>
@@ -92,10 +168,15 @@
 
 </div>
 
-<footer>
-    <p>© 2026 Oreoluwa Joseph Adebayo</p>
-    <a href="https://www.linkedin.com/in/joseph-adebayo-4623263ab" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    <a href="https://github.com/Joseph-Adebayo" target="_blank" rel="noopener noreferrer">GitHub</a>
+<footer class="site-footer">
+    <div class="site-footer-inner">
+        <span>© 2026 Oreoluwa (Joseph) Adebayo · Coventry, UK</span>
+        <nav aria-label="Elsewhere">
+            <a href="mailto:adebayooreoluwa49@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/joseph-adebayo-4623263ab" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/Joseph-Adebayo" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </nav>
+    </div>
 </footer>
 <script src="nav.js"></script>
 </body>
