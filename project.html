@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -31,7 +32,26 @@
 <h1 class="page-title">Projects</h1>
 <div class="container">
 
-    <div class="experience-entry" id="revision-workspace">
+    <form class="project-search" role="search" hidden>
+        <div class="search">
+            <span class="search-icon material-symbols-outlined" aria-hidden="true">search</span>
+            <input class="search-input" type="search" placeholder="Search, e.g. Flask, Shopify" aria-label="Search projects">
+        </div>
+        <div class="filters" role="group" aria-label="Filter by category">
+            <button type="button" class="filter active" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="filter" data-filter="python" aria-pressed="false">Python</button>
+            <button type="button" class="filter" data-filter="ai" aria-pressed="false">AI</button>
+            <button type="button" class="filter" data-filter="cybersecurity" aria-pressed="false">Cybersecurity</button>
+            <button type="button" class="filter" data-filter="web-development" aria-pressed="false">Web Development</button>
+            <button type="button" class="filter" data-filter="music-tech" aria-pressed="false">Music Tech</button>
+            <button type="button" class="filter" data-filter="business" aria-pressed="false">Business</button>
+        </div>
+        <p class="search-count" aria-live="polite"></p>
+    </form>
+
+    <p class="no-results" hidden>No projects match that. <button type="button" class="clear-search">Show all projects</button></p>
+
+    <div class="experience-entry" id="revision-workspace" data-category="web-development">
         <b>Revision Workspace</b> <i>Web app, live, 5 users</i>
         <img src="images/revision-workspace-progress.jpg" alt="Revision Workspace progress page showing subject scores, why marks were lost and weakest topics" class="entry-img">
         <p>A revision web app for A-level students. You can annotate past papers with a stylus, record your marks, tag the mistakes you make and link them to your notes, so you can see which topics you keep getting wrong.</p>
@@ -48,7 +68,7 @@
         </div>
     </div>
 
-    <div class="experience-entry" id="beatforge">
+    <div class="experience-entry" id="beatforge" data-category="music-tech">
         <b>BeatForge</b> <i>Desktop app</i>
         <img src="images/beatforge.jpg" alt="BeatForge drum sequencer, mixer and piano roll" class="entry-img">
         <p>A music-making app (a DAW) that runs on the desktop. It has a drum sequencer, a piano roll, a mixer with effects, a song arrangement view and WAV export. It also works with a MIDI keyboard.</p>
@@ -63,7 +83,7 @@
         </div>
     </div>
 
-    <div class="experience-entry" id="asa-ai">
+    <div class="experience-entry" id="asa-ai" data-category="ai web-development python">
         <b>Àṣà AI</b> <i>AI assistant, prototype</i>
         <img src="images/asa-ai-login.jpg" alt="Àṣà AI sign-in screen" class="entry-img">
         <p>An AI assistant made for African users. It can reply in Pidgin, Yorùbá, Igbo, Hausa, French and Kiswahili, and it knows about things like JAMB and WAEC exams.</p>
@@ -78,7 +98,7 @@
         </div>
     </div>
 
-    <div class="experience-entry" id="revisionpilot">
+    <div class="experience-entry" id="revisionpilot" data-category="python web-development">
         <b>RevisionPilot</b> <i>A-level Computer Science NEA, in development</i>
         <p>RevisionPilot is the web app I'm building for my A-level Computer Science NEA. It makes a personalised revision timetable based on a student's school timetable, subjects and other commitments.</p>
         <p>I'm building it with Python, Flask, Jinja and SQLite, with an HTML/CSS front end. The main part is an algorithm that decides when to schedule revision sessions based on priority, deadlines and how much free time the student has.</p>
@@ -92,7 +112,7 @@
         </div>
     </div>
 
-<div class="experience-entry" id="phishguard">
+<div class="experience-entry" id="phishguard" data-category="python cybersecurity web-development">
     <b>PhishGuard</b> <i>Python and Flask</i>
     <img src="images/phishguard-suspicious.jpg" alt="PhishGuard flagging a suspicious URL" class="entry-img">
     <p>A web app that checks a link for signs of phishing, like brand names in the subdomain, suspicious endings such as .tk, and IP addresses instead of domain names.</p>
@@ -105,7 +125,7 @@
     </div>
 </div>
 
-<div class="experience-entry" id="reselling">
+<div class="experience-entry" id="reselling" data-category="business">
     <b>Reselling</b> <i>Independent business, started with £15</i>
     <img src="images/reselling-sheet.jpg" alt="My reselling spreadsheet: cost price, quantity, selling price and price sold for each item, with totals and profit" class="entry-img" style="object-fit: contain; background: #FFFFFF">
     <p>I started reselling with £15 to learn how buying and selling actually works. My first deal was a pair of Adidas Sambas: I bought them for £12 and sold them for £40, a £28 profit.</p>
@@ -129,7 +149,7 @@
     </div>
 </div>
 
-<div class="experience-entry" id="coolora">
+<div class="experience-entry" id="coolora" data-category="business web-development">
     <b>Coolora</b> <i>E-commerce &amp; Digital Marketing Project, June 2026 to September 2026</i>
     <img src="images/coolora-storefront.jpg" alt="Coolora Shopify storefront" class="entry-img">
 
@@ -179,5 +199,6 @@
     </div>
 </footer>
 <script src="nav.js"></script>
+<script src="projects.js"></script>
 </body>
 </html>
